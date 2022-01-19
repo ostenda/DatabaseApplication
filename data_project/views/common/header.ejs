@@ -6,18 +6,17 @@
           <a class="nav-link active" href="/">
             Home <span class="sr-only">(current)</span>
           </a>
-          <a class="nav-link" href="search-tastings"> Search Sport activity </a>
+          <a class="nav-link" href="search-sport"> Search Sport activity </a>
           <a class="nav-link" href="sportmates"> Sportmates</a>
-          <% if(user) { %>
+         
            <a class="nav-link" href="saved-sportmates">My Saved Sportmates</a>
           <a class="nav-link" href="create-review"> Write a Review </a>
-          <a class="nav-link" href="logout"> <%= user.email %> (Logout) </a> <%
-          }%> <% if(!user) { %>
+          <a class="nav-link" href="logout"> 
           <a class="nav-link" href="login"> Login </a>
           <a class="nav-link" href="join"> Register </a>
-          <% } %>
+          
         </div>
       </div>
     </nav>
   </header>
-  ;
+  

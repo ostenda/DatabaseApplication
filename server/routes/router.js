@@ -10,6 +10,7 @@ const controller = require('../controller/controller');
  */
 route.get('/', services.homeRoutes);
 
+
 /**
  *  @description add users
  *  @method GET /add-user
@@ -22,6 +23,13 @@ route.get('/add-user', services.add_user)
  */
 route.get('/update-user', services.update_user)
 
+route.get('/login',services.login)
+
+route.get('/register',services.register)
+
+route.get('/map',services.map)
+
+route.get('/home',services.home)
 
 // API
 route.post('/api/users', controller.create);

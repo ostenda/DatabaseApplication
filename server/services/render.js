@@ -14,8 +14,24 @@ exports.homeRoutes = (req, res) => {
     
 }
 
+exports.home = (req, res) =>{
+    res.render('home');
+}
+
+exports.login = (req, res) =>{
+    res.render('login');
+}
+
+exports.register = (req, res) =>{
+    res.render('register');
+}
+
 exports.add_user = (req, res) =>{
     res.render('add_user');
+}
+
+exports.map = (req, res) =>{
+    res.render('map');
 }
 
 exports.update_user = (req, res) =>{

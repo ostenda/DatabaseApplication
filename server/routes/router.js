@@ -1,8 +1,10 @@
 const express = require('express');
 const route = express.Router()
+const user = require("../model/User");
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+const userController = require('../controller/user')
 
 /**
  *  @description Root Route
@@ -23,9 +25,21 @@ route.get('/add-user', services.add_user)
  */
 route.get('/update-user', services.update_user)
 
-route.get('/login',services.login)
+route.get("/join", (req, res) => {
+    res.render('create-user', { errors: {} })
+  });
+  
+route.post("/join", userController.create);
+route.get("/login", (req, res) => {
+    res.render('login-user', { errors: {} })
+});
+route.post("/login", userController.login);
 
-route.get('/register',services.register)
+route.get("/logout", async (req, res) => {
+    req.session.destroy();
+    global.user = false;
+    res.redirect('/');
+  })
 
 route.get('/map',services.map)
 

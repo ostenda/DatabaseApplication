@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
 const path = require('path');
+const expressSession = require("express-session");
 
 const connectDB = require('./server/database/connection');
 
@@ -10,6 +11,26 @@ const app = express();
 
 dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 8080
+
+// middleware function
+app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
+
+app.use("*", async (req, res, next) => {
+    global.user = false;
+    if (req.session.userID && !global.user) {
+      const user = await User.findById(req.session.userID);
+      global.user = user;
+    }
+    next();
+  })
+
+  const authMiddleware = async (req, res, next) => {
+    const user = await User.findById(req.session.userID);
+    if (!user) {
+      return res.redirect('/home');
+    }
+    next()
+  }
 
 // log requests
 app.use(morgan('tiny'));

@@ -10,7 +10,7 @@ const connectDB = require('./server/database/connection');
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
-const PORT = process.env.PORT 
+const { PORT, MONGODB_URI } = process.env;
 
 // middleware function
 app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))

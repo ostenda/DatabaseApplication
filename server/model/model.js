@@ -10,8 +10,11 @@ var schema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    gender : String,
-    status : String
+    gender : String,    
+    exp : String,
+    field : String,
+    contact : String,
+    status : String,
 })
 
 const Userdb = mongoose.model('userdb', schema);

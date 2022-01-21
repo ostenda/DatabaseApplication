@@ -15,7 +15,7 @@ exports.create = (req,res)=>{
         gender: req.body.gender,
         exp : req.body.exp,
         field : req.body.field,
-        Contact: req.body.gender,
+        contact: req.body.contact,
         status : req.body.status
     })
 

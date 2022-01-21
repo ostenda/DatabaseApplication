@@ -80,12 +80,12 @@ Folder structure in the project
           └── include    
 
 
+![Diagram](assets/img/Diagram.jpg)
 
-A high-level overview of how the system functions, you can use screen shots if it helps. You should consider aspects such as:
+Diagram shows application structure
 
-Briefly describing all datastores including databases, file systems and media data stores
-Key views and interfaces
-Including a diagram of the key system components and how they are linked
+
+The program performs CRUD functions. It connects to the database and sends information to it. 
 
 
 
@@ -138,21 +138,12 @@ Another issue is the main feature I wanted to add to the program and that is a g
 
 The program has a very large potential because I do not have to limit myself to one sport. It is possible to differentiate any sport by creating new collections in the database. 
 
-Translated with www.DeepL.com/Translator (free version)
-
 
 ## Authors
 
 Contributors name: Michal Ostenda
 
 
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
